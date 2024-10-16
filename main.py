@@ -11,7 +11,7 @@ c = 3
 # Definice funkce max_number
 def max_number():
     nejvetsi = max(a, b, c)
-    print(f"Největší číslo je: {nejvetsi}")
+    print("Největší číslo je: {nejvetsi}")
 
 # Volání funkce max_number
 max_number()

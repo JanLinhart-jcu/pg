@@ -31,3 +31,4 @@ if __name__ == "__main__":
     divisor = int(input("Enter divisor: "))
     result = find_divisible(max_number, divisor)
     print(f'Čísla dělitelná číslem {divisor} menší než nebo rovna číslu {max_number}: {result}')
+    unittest.main()

@@ -5,7 +5,7 @@
 # 2. Teplota je uložená v slovníku `main` pod klíčem `temp` v Kelvinech.
 # 3. Funkce vrátí teplotu v °C zaokrouhlenou na dvě desetinná místa (273.15 °K = 0 °C).
 
-import requests # knihovna pro odesílání HTTP požadavků.
+import requests, unittest # knihovna pro odesílání HTTP požadavků.
 
 # API klíč pro OpenWeatherMap
 api_key = 'a023a3be26e530f37924110734b494b1'
@@ -38,3 +38,4 @@ if __name__ == "__main__":
     city = input("Enter city name: ") # uživatel zadá požadované město
     temperature = fetch_weather_data(city, api_key) # proměnná temperature interpretuje informace získané funkcí fetch_weather_data
     print(f"Current temperature in {city}: {temperature} °C")
+    

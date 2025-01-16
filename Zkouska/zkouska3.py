@@ -2,7 +2,7 @@ import math
 
 class Shape:
 
-    def __init__(self, shape_name=None):
+    def __init__(self, shape_name=None): # self odkazuje na vlastnosti konkrétního objektu, nikoliv na třídu jako celek
         self.shape_name = shape_name # Nastavení názvu tvaru shape_name
     
     def __str__(self):

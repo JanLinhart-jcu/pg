@@ -4,20 +4,30 @@
 # Funkce vrátí seznam všech čísel menších nebo rovno max_number, která jsou dělitelná beze zbytku dělitelem divisor.
 # Příklad: find_divisible(5, 2) vrátí [2, 4].
 
-def find_divisible(max_number, divisor):
-    # Implementace funkce podle zadání
-    return [num for num in range(1, max_number + 1) if num % divisor == 0]
+import unittest
+
+def find_divisible(max_number, divisor): # definuje funkci, která příjmá dva parametry
+    return [num for num in range(1, max_number + 1) if num % divisor == 0] # range(1, max_number + 1) generuje postupně všechna čísla od 1 do max_number (včetně) 
+                                                                        # num % divisor == 0 ověřuje, zda je číslo num dělitelné beze zbytku dělitelem divisor
+                                                                        # pokud ano, číslo se přidá do seznamu (list comprehension)
 
 # Unit testy
-def test_find_divisible():
-    assert find_divisible(25, 5) == [5, 10, 15, 20, 25]
-    assert find_divisible(9, 3) == [3, 6, 9]
-    assert find_divisible(13, 2) == [2, 4, 6, 8, 10, 12]
+class TestFindDivisible(unittest.TestCase):
 
-test_find_divisible()
+    def test_divisible_by_5(self):
+        self.assertEqual(find_divisible(25, 5), [5, 10, 15, 20, 25])
+
+    def test_divisible_by_3(self):
+        self.assertEqual(find_divisible(9, 3), [3, 6, 9])
+
+    def test_divisible_by_2(self):
+        self.assertEqual(find_divisible(13, 2), [2, 4, 6, 8, 10, 12])
+
+    def test_no_divisible(self):
+        self.assertEqual(find_divisible(5, 10), [])  # žádná čísla nejsou dělitelná
 
 if __name__ == "__main__":
     max_number = 100
     divisor = int(input("Enter divisor: "))
     result = find_divisible(max_number, divisor)
-    print(f'Numbers divisible by {divisor} less than or equal to {max_number}: {result}')
+    print(f'Čísla dělitelná číslem {divisor} menší než nebo rovna číslu {max_number}: {result}')
